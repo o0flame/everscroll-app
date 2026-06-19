@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everscroll — Support</title>
+<style>
+  :root { --accent:#0A6CF5; --ink:#1d1d1f; --ink-2:#6e6e73; --bg:#fff; --line:rgba(0,0,0,0.08); }
+  @media (prefers-color-scheme: dark){ :root{ --accent:#3A8BFF; --ink:#f5f5f7; --ink-2:#a1a1a6; --bg:#000; --line:rgba(255,255,255,0.12);} }
+  body{ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif; color:var(--ink);
+    background:var(--bg); line-height:1.65; max-width:680px; margin:0 auto; padding:60px 24px; }
+  a{ color:var(--accent); } h1{ font-size:32px; letter-spacing:-0.6px; margin-bottom:6px; }
+  .date{ color:var(--ink-2); font-size:14px; margin-bottom:32px; }
+  h2{ font-size:19px; margin:32px 0 8px; } h3{ font-size:15px; margin:18px 0 2px; }
+  p,li{ color:var(--ink); font-size:15px; } .lead{ font-size:17px; }
+  ul{ padding-left:20px; } li{ margin:5px 0; }
+  .back{ display:inline-block; margin-bottom:30px; text-decoration:none; font-size:14px; }
+  kbd{ font:12px ui-monospace,monospace; background:var(--line); border-radius:5px; padding:1px 6px; }
+  .q{ font-weight:600; margin-top:18px; }
+</style>
+</head>
+<body>
+  <a class="back" href="index.html">← Everscroll</a>
+  <h1>Support</h1>
+  <p class="date">Everscroll for macOS</p>
+
+  <p class="lead">Everscroll lives in your menu bar and captures long, scrolling
+  screenshots — then lets you beautify, split into social carousels, extract text,
+  and redact private info, all on your Mac.</p>
+
+  <h2>Getting started</h2>
+  <ul>
+    <li>Click the Everscroll icon in the menu bar (or press <kbd>⌥⌘A</kbd>) to start a
+        <strong>scrolling capture</strong>. Drag the region, then scroll the page —
+        Everscroll stitches it into one tall, sharp image.</li>
+    <li>The menu also has <strong>Screenshot</strong>, <strong>Extract Text</strong>,
+        <strong>Image&nbsp;to&nbsp;Text</strong>, <strong>Image&nbsp;to&nbsp;Carousel</strong>,
+        and <strong>Pick Screen Color</strong>.</li>
+    <li>First run asks for macOS <strong>Screen Recording</strong> permission — required
+        for any capture tool. Grant it, then quit &amp; reopen.</li>
+  </ul>
+
+  <h2>Features</h2>
+  <h3>Edit &amp; beautify</h3>
+  <p>Short captures open pre-beautified (background, padding, shadow). Add arrows,
+  shapes, text, numbered steps, and mosaic blur from the toolbar; tweak the look in the
+  right inspector, or save a look as a <strong>preset</strong>.</p>
+  <h3>Social carousels</h3>
+  <p>Split one long image into evenly-sized slides, or pick <strong>several images</strong>
+  (Image&nbsp;to&nbsp;Carousel → select multiple) and each becomes one slide — rendered to
+  Instagram / LinkedIn / TikTok / Pinterest / X specs.</p>
+  <h3>Extract &amp; translate text</h3>
+  <p>OCR any capture or image (40+ languages, on-device). In the editor, the
+  <strong>Copy&nbsp;Text</strong> tool lets you drag a box over text to grab just that part.
+  Tap <strong>Translate</strong> to translate via macOS.</p>
+  <h3>Auto-redact</h3>
+  <p>Everscroll flags likely emails, phone numbers, and card numbers and offers one-tap
+  <strong>Redact all</strong> — a pixel-destroying mosaic, all on-device. Toggle it in
+  Settings → After capture.</p>
+
+  <h2>FAQ</h2>
+  <p class="q">Why does it need Screen Recording permission?</p>
+  <p>macOS requires it of every app that captures the screen. Everscroll uses it only for
+  the captures you start — see the <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <p class="q">Where are my files saved?</p>
+  <p>By default to <kbd>~/Downloads/Everscroll/</kbd> (auto-save can be turned off, or the
+  folder changed, in Settings → After capture). Save As and carousel export ask you where.</p>
+
+  <p class="q">Is it really all local?</p>
+  <p>Yes — your screenshots never leave your Mac. The only network use is an optional
+  macOS Translation (Apple's service) and a small carousel-spec config download. Details
+  in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <p class="q">Free trial &amp; purchase</p>
+  <p>Everscroll Pro includes a 14-day free trial; it's a one-time purchase, not a
+  subscription. Already bought it? Open the unlock screen and choose
+  <strong>Restore&nbsp;Purchase</strong>.</p>
+
+  <p class="q">Which macOS does it need?</p>
+  <p>macOS 14 (Sonoma) or later. Translation needs macOS 14.4+.</p>
+
+  <h2>Contact</h2>
+  <p>Found a bug or have a question? Use <strong>Report a Bug / Feedback</strong> in the
+  menu, or email <a href="mailto:hello@everscroll.app">hello@everscroll.app</a>. We read
+  every message.</p>
+</body>
+</html>

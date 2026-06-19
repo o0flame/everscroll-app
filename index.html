@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everscroll — Long screenshots, captured once.</title>
+<meta name="description" content="A native macOS scrolling screenshot tool. Capture an entire chat, document, or web page in one long image — then copy, split for social, extract text, or export a searchable PDF. Everything stays on your Mac.">
+<!-- DRAFT landing page. Positioning per docs/brand-narrative.md (positive
+     framing — never "failure/recovery" in outward copy). Replace DOWNLOAD_URL
+     with the notarized DMG link once scripts/release-notarize.sh has run. -->
+<style>
+  :root {
+    --accent: #0A6CF5; --accent-2: #0062E0;
+    --ink: #1d1d1f; --ink-2: #6e6e73; --line: rgba(0,0,0,0.08);
+    --bg: #ffffff; --bg-soft: #f5f5f7;
+    --green: #34c759; --radius: 18px;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --accent: #3A8BFF; --ink: #f5f5f7; --ink-2: #a1a1a6; --line: rgba(255,255,255,0.12);
+            --bg: #000000; --bg-soft: #1c1c1e; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font); color: var(--ink); background: var(--bg);
+    -webkit-font-smoothing: antialiased; line-height: 1.5; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 22px 0; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 11px; font-size: 19px; font-weight: 600; letter-spacing: -0.4px; }
+  .brand img { width: 30px; height: 30px; border-radius: 7px; }
+  .brand .shot { color: var(--accent); }
+  nav a { color: var(--ink-2); text-decoration: none; font-size: 14px; margin-left: 22px; }
+  nav a:hover { color: var(--ink); }
+
+  .hero { text-align: center; padding: 64px 0 56px; }
+  .hero img.icon { width: 120px; height: 120px; border-radius: 27px;
+    box-shadow: 0 18px 50px rgba(10,108,245,0.28); margin-bottom: 28px; }
+  .hero h1 { font-size: 52px; font-weight: 700; letter-spacing: -1.5px; line-height: 1.08; }
+  .hero h1 .accent { color: var(--accent); }
+  .hero p.sub { font-size: 21px; color: var(--ink-2); margin: 18px auto 0; max-width: 600px; }
+  .cta { margin-top: 34px; display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 9px; padding: 14px 26px; border-radius: 13px;
+    font-size: 16px; font-weight: 600; text-decoration: none; border: 0; cursor: pointer; }
+  .btn-primary { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color: #fff;
+    box-shadow: 0 6px 20px rgba(10,108,245,0.35); }
+  .btn-primary:hover { filter: brightness(1.05); }
+  .btn-ghost { background: var(--bg-soft); color: var(--ink); }
+  .req { margin-top: 16px; font-size: 13px; color: var(--ink-2); }
+
+  .shot-frame { margin: 8px auto 0; max-width: 880px; border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,0.18); background: var(--bg-soft);
+    aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; color: var(--ink-2); font-size: 14px; }
+
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding: 80px 0 40px; }
+  .pillar { background: var(--bg-soft); border-radius: var(--radius); padding: 28px; border: 1px solid var(--line); }
+  .pillar .ic { width: 44px; height: 44px; border-radius: 11px; background: rgba(10,108,245,0.12);
+    color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+  .pillar h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
+  .pillar p { font-size: 14px; color: var(--ink-2); margin-top: 8px; }
+  @media (max-width: 720px) { .pillars { grid-template-columns: 1fr; } .hero h1 { font-size: 38px; } }
+
+  .strip { text-align: center; padding: 44px 0; border-top: 1px solid var(--line); }
+  .strip .pill { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2);
+    background: rgba(52,199,89,0.12); color: var(--green); padding: 8px 16px; border-radius: 999px; font-weight: 500; }
+
+  .platforms { text-align: center; padding: 16px 0 70px; }
+  .platforms h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.6px; }
+  .platforms p { color: var(--ink-2); margin-top: 10px; font-size: 15px; }
+  .chips { margin-top: 22px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .chip { display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px; border-radius: 999px;
+    background: var(--bg-soft); border: 1px solid var(--line); font-size: 14px; font-weight: 500; }
+  .chip .dot { width: 9px; height: 9px; border-radius: 50%; }
+
+  footer { border-top: 1px solid var(--line); padding: 30px 0 50px; color: var(--ink-2); font-size: 13px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: var(--ink-2); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="AppIcon.svg" alt="Everscroll">
+      <span>Ever<span class="shot">scroll</span></span>
+    </div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#social">Social split</a>
+      <a href="#download">Download</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="download">
+    <img class="icon" src="AppIcon.svg" alt="Everscroll icon">
+    <h1>Capture it once.<br><span class="accent">Get all of it.</span></h1>
+    <p class="sub">A native Mac tool for long screenshots. Scroll a chat, a doc, a whole web page — Everscroll stitches it into one clean image you can copy, split, or save in a tap.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="DOWNLOAD_URL">⬇ Download for Mac</a>
+      <a class="btn btn-ghost" href="#features">See how it works</a>
+    </div>
+    <p class="req">macOS 14 Sonoma or later · Apple silicon &amp; Intel · Free while in beta</p>
+  </section>
+
+  <div class="shot-frame">[ product screenshot / demo GIF goes here ]</div>
+
+  <section class="pillars" id="features">
+    <div class="pillar">
+      <div class="ic">↧</div>
+      <h3>However long, all of it</h3>
+      <p>Scroll at your own pace and watch the long image build live. Trim the tail and keep going anytime — like undo, not a restart.</p>
+    </div>
+    <div class="pillar">
+      <div class="ic">⚡</div>
+      <h3>Ready the moment you finish</h3>
+      <p>Auto-copied to the clipboard. One tap to a searchable PDF (⌘F finds your text), extract text, annotate, or blur anything private.</p>
+    </div>
+    <div class="pillar">
+      <div class="ic">▦</div>
+      <h3>Split for any platform</h3>
+      <p>Turn one long image into a tidy carousel — pick the platform, get evenly-sized slides with page numbers. Cuts land between rows.</p>
+    </div>
+  </section>
+
+  <div class="strip">
+    <span class="pill">🔒 Everything stays on your Mac — nothing is ever uploaded</span>
+  </div>
+
+  <section class="platforms" id="social">
+    <h2>Built for where you post</h2>
+    <p>One tap sizes your carousel to each platform's rules.</p>
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:#FF2741"></span>小红书 · RED</span>
+      <span class="chip"><span class="dot" style="background:#07C160"></span>朋友圈 · Moments</span>
+      <span class="chip"><span class="dot" style="background:#E6162D"></span>微博 · Weibo</span>
+      <span class="chip"><span class="dot" style="background:#C13584"></span>Instagram</span>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Everscroll</span>
+    <span><a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="support.html">Support</a> &nbsp;·&nbsp; <a href="mailto:hello@everscroll.app">Contact</a></span>
+  </footer>
+</div>
+</body>
+</html>

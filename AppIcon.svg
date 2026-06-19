@@ -1,0 +1,31 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Everscroll app icon">
+  <defs>
+    <linearGradient id="ss-bg" x1="256" y1="40" x2="256" y2="472" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2D9BFF"></stop>
+      <stop offset="1" stop-color="#0062E0"></stop>
+    </linearGradient>
+    <linearGradient id="ss-sheet" x1="256" y1="120" x2="256" y2="392" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"></stop>
+      <stop offset="1" stop-color="#EAF1FB"></stop>
+    </linearGradient>
+  </defs>
+  
+  <path d="M112 40h288c39.76 0 72 32.24 72 72v288c0 39.76-32.24 72-72 72H112c-39.76 0-72-32.24-72-72V112c0-39.76 32.24-72 72-72Z" fill="url(#ss-bg)"></path>
+  
+  <path d="M112 40h288c39.76 0 72 32.24 72 72v60H40v-60c0-39.76 32.24-72 72-72Z" fill="#FFFFFF" opacity="0.10"></path>
+  
+  <rect x="158" y="108" width="196" height="312" rx="22" fill="url(#ss-sheet)"></rect>
+  
+  <g fill="#0A6CF5" opacity="0.22">
+    <rect x="186" y="146" width="140" height="14" rx="7"></rect>
+    <rect x="186" y="178" width="112" height="14" rx="7"></rect>
+    <rect x="186" y="210" width="140" height="14" rx="7"></rect>
+    <rect x="186" y="242" width="96" height="14" rx="7"></rect>
+    <rect x="186" y="274" width="140" height="14" rx="7"></rect>
+    <rect x="186" y="306" width="120" height="14" rx="7"></rect>
+  </g>
+  
+  <rect x="232" y="350" width="48" height="64" rx="24" fill="#0A6CF5"></rect>
+  <path d="M243 372l13 13 13-13" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+  <circle cx="256" cy="362" r="4" fill="#FFFFFF"></circle>
+</svg>
