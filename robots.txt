@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://o0flame.github.io/everscroll-app/sitemap.xml
